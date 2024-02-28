@@ -1,5 +1,4 @@
 ﻿using Game.Events;
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -80,7 +79,7 @@ namespace Game
                 currentMapIndex = mapData.Maps.Count - 1;
 
             UpdateMap();
-            await GameLobbyManager.Ins.SelectionMap(currentMapIndex);
+            await GameLobbyManager.Ins.SelectionMap(currentMapIndex, mapData.Maps[currentMapIndex].SceneName);
         }
         private async void OnLeftButtonClicked()
         {
@@ -90,7 +89,7 @@ namespace Game
                 currentMapIndex = 0;
 
             UpdateMap();
-            await GameLobbyManager.Ins.SelectionMap(currentMapIndex);
+            await GameLobbyManager.Ins.SelectionMap(currentMapIndex, mapData.Maps[currentMapIndex].SceneName);
         }
         private void UpdateMap()
         {
@@ -108,7 +107,7 @@ namespace Game
         }
         private async void OnStartClicked()
         {
-            await GameLobbyManager.Ins.StartGame(mapData.Maps[currentMapIndex].SceneName);
+            await GameLobbyManager.Ins.StartGame();
         }
     }
 }
