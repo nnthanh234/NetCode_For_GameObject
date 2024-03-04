@@ -58,7 +58,6 @@ public class LobbyManager : Singleton<LobbyManager>
                 lobby = newLobby;
                 GameFramework.Events.LobbyEvents.OnLobbyUpdate?.Invoke(lobby);
             }
-
             yield return new WaitForSecondsRealtime(waitTime);
         }
     }

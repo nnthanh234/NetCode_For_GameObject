@@ -31,7 +31,6 @@ namespace Game
                 }
             }
         }
-
         private void OnSignedIn()
         {
             Debug.Log($"Player Id: {AuthenticationService.Instance.PlayerId}");

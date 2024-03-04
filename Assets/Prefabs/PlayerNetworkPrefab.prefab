@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3001333920400075418}
   - component: {fileID: 1946322544411837212}
   - component: {fileID: 261640974500993836}
-  - component: {fileID: 1869598756088867124}
+  - component: {fileID: 2322677534267881588}
   m_Layer: 0
-  m_Name: PlayerPrefab
+  m_Name: PlayerNetworkPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   txtPlayerName: {fileID: 5108052079878661395}
   isReady: {fileID: 4086782267700247243}
---- !u!114 &1869598756088867124
+--- !u!114 &2322677534267881588
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3208830034
+  GlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0

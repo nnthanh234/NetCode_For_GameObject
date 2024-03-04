@@ -62,6 +62,8 @@ namespace Game
                 leftButton.gameObject.SetActive(false);
                 rightButton.gameObject.SetActive(false);
             }
+
+            GameLobbyManager.Ins.SelectionMap(currentMapIndex, mapData.Maps[currentMapIndex].SceneName);
         }
         private async void OnReadyPressed()
         {

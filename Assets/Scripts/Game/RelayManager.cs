@@ -13,6 +13,12 @@ namespace Game
         private int port;
         private Guid allocationId;
         private byte[] connectionData;
+        private byte[] key;
+        private byte[] allocationHostData;
+        private byte[] allocationIdBytes;
+        private bool isHost;
+
+        public bool IsHost => isHost;
 
         public string GetAllocationId()
         {
@@ -33,7 +39,10 @@ namespace Game
 
             allocationId = allocation.AllocationId;
             connectionData = allocation.ConnectionData;
+            key = allocation.Key;
+            allocationIdBytes = allocation.AllocationIdBytes;
 
+            isHost = true;
             return joinCode;
         }
         public async Task<bool> JoinRelay(string joinCode)
@@ -47,7 +56,18 @@ namespace Game
 
             allocationId = allocation.AllocationId;
             connectionData = allocation.ConnectionData;
+            allocationHostData = allocation.HostConnectionData;
+            key = allocation.Key;
+            allocationIdBytes = allocation.AllocationIdBytes;
             return true;
-        }        
+        }  
+        public (byte[] AllocationId, byte[] Key, byte[] ConnectionData, string dtlsAddress, int dtlsPort) GetHostConnectionInfo()
+        {
+            return (allocationIdBytes, key, connectionData, ip, port);
+        }
+        public (byte[] AllocationId, byte[] Key, byte[] ConnectionData, byte[] HostConnectionData, string dtlsAddress, int dtlsPort) GetClientConnectionInfo()
+        {
+            return (allocationIdBytes, key, connectionData, allocationHostData, ip, port);
+        }
     }
 }
